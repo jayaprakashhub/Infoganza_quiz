@@ -124,13 +124,38 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const correctAnswers = [
-  'Hyper Text Markup Language', 'CSS', 'Python Script', 'Cascading Style Sheets', 'PHP',
-  'scope and reassignability', 'React', 'function myFunction()', 'function', 'value',
-  '<select>', 'relational database', 'all of the above', '6', 'browser',
-  'getElementById()', 'define', 'push', '<img>', 'Cascading Style Sheets',
-  'parentheses', 'sort()', 'Logs a message to the console', 'All of the above',
-];
+ const correctAnswers = [
+    'Hyper Text Markup Language', // Question 1
+    'CSS', // Question 2
+    'Python Script', // Question 3
+    'Cascading Style Sheets', // Question 4
+    'PHP', // Question 5
+    'scope and reassignability', // Question 6
+    'React', // Question 7
+    'function myFunction()', // Question 8
+    'function', // Question 9
+    'value', // Question 10
+    '<select>', // Question 11
+    'relational database', // Question 12
+    'all of the above', // Question 13
+    '6', // Question 14
+    'browser', // Question 15
+    'getElementById()', // Question 16
+    'define', // Question 17
+    'push', // Question 18
+    '<img>', // Question 19
+    'Cascading Style Sheets', // Question 20
+    'parentheses', // Question 21
+    'sort()', // Question 22
+    'Logs a message to the console', // Question 23
+    'All of the above', // Question 24
+    'PUT',                         // Question 25
+    'alt',                         // Question 26
+    'const',                       // Question 27
+    'color',                       // Question 28
+    'Number',                      // Question 29
+    '<ul>'                         // Question 30
+  ];
 
 const AdminResults = () => {
   const [submissions, setSubmissions] = useState([]);
@@ -216,7 +241,7 @@ const AdminResults = () => {
                       <td className="py-3 px-4 border-b">{submission.year}</td>
                       <td className="py-3 px-4 border-b">{submission.registerNumber}</td>
                       <td className="py-3 px-4 border-b">{submission.college}</td>
-                      <td className="py-3 px-4 border-b text-center font-semibold">{submission.score} / 24</td>
+                      <td className="py-3 px-4 border-b text-center font-semibold">{submission.score} / 30</td>
                       <td className="py-3 px-4 border-b text-center">{submission.timeTaken}s</td>
                       <td className="py-3 px-4 border-b text-center">
                         <button
