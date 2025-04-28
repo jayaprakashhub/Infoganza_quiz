@@ -803,7 +803,7 @@ const QuizPage = ({ userInfo, submissionId }) => {
   const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 minutes in seconds
   const navigate = useNavigate();
 
-  const questions = [
+ const questions = [
         // 1. MCQ
         {
           question: 'What does HTML stand for?',
@@ -923,7 +923,37 @@ const QuizPage = ({ userInfo, submissionId }) => {
         {
           question: 'Which of the following is used to add a comment in JavaScript?',
           options: ['//', '#', '/* */', 'All of the above']
+        },// 25. MCQ
+        {
+          question: 'Which HTTP method is used to update existing data on a server?',
+          options: ['GET', 'POST', 'PUT', 'DELETE']
+        },
+        // 26. Fill-in-the-Blank
+        {
+          question: 'The ________ attribute in HTML specifies alternative text for an image.',
+          type: 'fill'
+        },
+        // 27. MCQ
+        {
+          question: 'Which keyword is used to declare a constant in JavaScript?',
+          options: ['const', 'constant', 'var', 'let']
+        },
+        // 28. Fill-in-the-Blank
+        {
+          question: 'In CSS, the ________ property is used to change the text color.',
+          type: 'fill'
+        },
+        // 29. MCQ
+        {
+          question: 'Which of the following is a JavaScript data type?',
+          options: ['Number', 'Class', 'Module', 'Package']
+        },
+        // 30. Fill-in-the-Blank
+        {
+          question: 'The ________ tag in HTML is used to define an unordered list.',
+          type: 'fill'
         }
+        
       ];
 
   useEffect(() => {
