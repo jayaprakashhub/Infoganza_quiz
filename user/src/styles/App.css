@@ -1,0 +1,83 @@
+/* src/styles/App.css */
+
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Header styling */
+.header {
+  background-color: #1f3c73;
+  color: white;
+  padding: 20px;
+}
+
+.event-title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.symposium-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.event-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+/* Quiz Page styling */
+.quiz-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.question h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.score {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
