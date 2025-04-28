@@ -217,10 +217,16 @@ router.put('/submit/:id', async (req, res) => {
     'sort()', // Question 22
     'Logs a message to the console', // Question 23
     'All of the above', // Question 24
+    'PUT',                         // Question 25
+    'alt',                         // Question 26
+    'const',                       // Question 27
+    'color',                       // Question 28
+    'Number',                      // Question 29
+    '<ul>'                         // Question 30
   ];
   
   // Validate submission data
-  if (!Array.isArray(answers) || answers.length !== 24 || typeof timeTaken !== 'number') {
+  if (!Array.isArray(answers) || answers.length !== 30 || typeof timeTaken !== 'number') {
     return res.status(400).json({ error: 'Invalid submission data' });
   }
 
