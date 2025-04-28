@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const QuizPage = ({ userInfo, submissionId }) => {
-  const [answers, setAnswers] = useState(Array(24).fill(''));
+  const [answers, setAnswers] = useState(Array(30).fill(''));
   const [startTime, setStartTime] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
