@@ -9,7 +9,13 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middlewares
-app.use(cors()); // Enable CORS
+app.use(cors({
+  origin: [
+    'https://infoganza.onrender.com',
+    'https://infoganza-admin.onrender.com'
+  ],
+  credentials: true, // optional if you use cookies/sessions
+}));// Enable CORS
 app.use(express.json()); // Parse incoming JSON requests
 
 // MongoDB connection
