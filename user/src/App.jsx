@@ -7,7 +7,7 @@ import QuizPage from './pages/QuizPage';
 import axios from 'axios'
 
 
-axios.defaults.baseURL="http://localhost:5001"
+axios.defaults.baseURL=" https://infoganza-quiz.onrender.com"
 
 function App() { 
   const [userInfo, setUserInfo] = useState(null);
