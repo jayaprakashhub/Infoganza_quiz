@@ -270,4 +270,36 @@ router.get('/results', async (req, res) => {
   }
 });
 
+// DELETE /api/delete/:id — Delete a single submission by ID
+router.delete('/delete/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deletedSubmission = await Submission.findByIdAndDelete(id);
+
+    if (!deletedSubmission) {
+      return res.status(404).json({ error: 'Submission not found' });
+    }
+
+    res.status(200).json({ message: 'Submission deleted successfully', deleted: deletedSubmission });
+  } catch (err) {
+    console.error('Error deleting submission:', err);
+    res.status(500).json({ error: 'Server error', details: err.message });
+  }
+});
+
+// DELETE /api/delete-all — Delete all submissions
+router.delete('/delete-all', async (req, res) => {
+  try {
+    const result = await Submission.deleteMany({});
+
+    res.status(200).json({ 
+      message: 'All submissions deleted successfully', 
+      deletedCount: result.deletedCount 
+    });
+  } catch (err) {
+    console.error('Error deleting all submissions:', err);
+    res.status(500).json({ error: 'Server error', details: err.message });
+  }
+});
 module.exports = router;
