@@ -192,17 +192,17 @@ router.put('/submit/:id', async (req, res) => {
   const { id } = req.params;
 
   // Define the correct answers for all questions
- const correctAnswers = [
+const correctAnswers = [
   'O(n)',                         // Question 1
   'JOIN',                         // Question 2
   '30 and 18',                    // Question 3
   'Structured Query Language',    // Question 4
   '₹720',                         // Question 5
   '[1, 2, 3, 1, 2, 3]',           // Question 6
-  '25',                           // Question 7
+  '18',                           // Question 7
   'Stack',                        // Question 8
   'DROP',                         // Question 9
-  'Wednesday',                    // Question 10
+  'Thursday',                    // Question 10
   'Tabs or spaces',               // Question 11
   '3030',                         // Question 12
   '73.3',                         // Question 13
@@ -213,7 +213,7 @@ router.put('/submit/:id', async (req, res) => {
   'Preventing duplicate rows',    // Question 18
   'HyperText Markup Language',    // Question 19
   'for',                          // Question 20
-  '9',                            // Question 21
+  '10',                            // Question 21
   'Dijkstra’s Algorithm',         // Question 22
   'BQQMF',                        // Question 23
   '150',                          // Question 24
@@ -224,6 +224,7 @@ router.put('/submit/:id', async (req, res) => {
   'A B C * +',                    // Question 29
   'n(n-1)/2'                      // Question 30
 ];
+
 
   // Validate submission data
   if (!Array.isArray(answers) || answers.length !== 30 || typeof timeTaken !== 'number') {
