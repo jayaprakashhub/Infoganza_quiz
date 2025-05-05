@@ -124,38 +124,38 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
- const correctAnswers = [
-    'Hyper Text Markup Language', // Question 1
-    'CSS', // Question 2
-    'Python Script', // Question 3
-    'Cascading Style Sheets', // Question 4
-    'PHP', // Question 5
-    'scope and reassignability', // Question 6
-    'React', // Question 7
-    'function myFunction()', // Question 8
-    'function', // Question 9
-    'value', // Question 10
-    '<select>', // Question 11
-    'relational database', // Question 12
-    'all of the above', // Question 13
-    '6', // Question 14
-    'browser', // Question 15
-    'getElementById()', // Question 16
-    'define', // Question 17
-    'push', // Question 18
-    '<img>', // Question 19
-    'Cascading Style Sheets', // Question 20
-    'parentheses', // Question 21
-    'sort()', // Question 22
-    'Logs a message to the console', // Question 23
-    'All of the above', // Question 24
-    'PUT',                         // Question 25
-    'alt',                         // Question 26
-    'const',                       // Question 27
-    'color',                       // Question 28
-    'Number',                      // Question 29
-    '<ul>'                         // Question 30
-  ];
+  const correctAnswers = [
+  'O(n)',                         // Question 1
+  'JOIN',                         // Question 2
+  '30 and 18',                    // Question 3
+  'Structured Query Language',    // Question 4
+  '₹720',                         // Question 5
+  '[1, 2, 3, 1, 2, 3]',           // Question 6
+  '25',                           // Question 7
+  'Stack',                        // Question 8
+  'DROP',                         // Question 9
+  'Wednesday',                    // Question 10
+  'Tabs or spaces',               // Question 11
+  '3030',                         // Question 12
+  '73.3',                         // Question 13
+  '60',                           // Question 14
+  'def',                          // Question 15
+  '2',                            // Question 16
+  'Temporary',                    // Question 17
+  'Preventing duplicate rows',    // Question 18
+  'HyperText Markup Language',    // Question 19
+  'for',                          // Question 20
+  '9',                            // Question 21
+  'Dijkstra’s Algorithm',         // Question 22
+  'BQQMF',                        // Question 23
+  '150',                          // Question 24
+  'ORDER BY DESC',                // Question 25
+  'Base',                         // Question 26
+  '6',                            // Question 27
+  'Son',                          // Question 28
+  'A B C * +',                    // Question 29
+  'n(n-1)/2'                      // Question 30
+];
 
 const AdminResults = () => {
   const [submissions, setSubmissions] = useState([]);
