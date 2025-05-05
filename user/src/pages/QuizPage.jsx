@@ -59,7 +59,7 @@ const QuizPage = ({ userInfo, submissionId }) => {
   // 10. MCQ
   {
     question: 'If today is Monday, what will be the day after 45 days?',
-    options: ['Sunday', 'Monday', 'Tuesday', 'Wednesday']
+    options: ['Sunday', 'Monday', 'Thursday', 'Wednesday']
   },
   // 11. MCQ
   {
@@ -114,7 +114,7 @@ const QuizPage = ({ userInfo, submissionId }) => {
   // 21. MCQ
   {
     question: 'What will be the output of print(2 ** 3 + 5 % 3) in Python?',
-    options: ['9', '11', '7', '13']
+    options: ['10', '11', '7', '13']
   },
   // 22. MCQ
   {
