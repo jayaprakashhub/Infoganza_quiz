@@ -11,157 +11,157 @@ const QuizPage = ({ userInfo, submissionId }) => {
   const navigate = useNavigate();
 
  const questions = [
-        // 1. MCQ
-        {
-          question: 'What does HTML stand for?',
-          options: ['Hyper Text Markup Language', 'Home Tool Markup Language', 'Hyperlinks and Text Markup Language', 'Hyperlink Tool and Markup Language']
-        },
-        // 2. MCQ
-        {
-          question: 'Which language is used for styling web pages?',
-          options: ['HTML', 'JQuery', 'CSS', 'XML']
-        },
-        // 3. MCQ
-        {
-          question: 'Which is not a JavaScript framework?',
-          options: ['Python Script', 'JQuery', 'Django', 'NodeJS']
-        },
-        // 4. Fill-in-the-Blank
-        {
-          question: 'CSS stands for _________.',
-          type:'fill'
-        },
-        // 5. MCQ
-        {
-          question: 'Which of the following is used to connect an application to a database?',
-          options: ['PHP', 'HTML', 'JS', 'React']
-        },
-        // 6. Fill-in-the-Blank
-        {
-          question: 'The main difference between var, let, and const in JavaScript is _________.',
-           type:'fill'
-        },
-        // 7. MCQ
-        {
-          question: 'Which one of these is a JavaScript framework?',
-          options: ['React', 'HTML', 'CSS', 'Python']
-        },
-        // 8. MCQ
-        {
-          question: 'What is the correct syntax for creating a function in JavaScript?',
-          options: ['function myFunction()', 'create function myFunction()', 'def myFunction()', 'function: myFunction()']
-        },
-        // 9. Fill-in-the-Blank
-        {
-          question: 'A block of code in JavaScript is called a ________.',
-           type:'fill'
-        },
-        // 10. MCQ
-        {
-          question: 'Which of the following is a property of a JavaScript object?',
-          options: ['length', 'key', 'value', 'method']
-        },
-        // 11. MCQ
-        {
-          question: 'Which of these HTML elements is used to define a list of options in a form?',
-          options: ['<input>', '<select>', '<textarea>', '<option>']
-        },
-        // 12. Fill-in-the-Blank
-        {
-          question: 'A database that stores data in tables is called ________.',
-           type:'fill'
-        },
-        // 13. MCQ
-        {
-          question: 'Which of the following is a valid HTML5 input type?',
-          options: ['text', 'password', 'email', 'all of the above']
-        },
-        // 14. MCQ
-        {
-          question: 'What is the output of the following JavaScript code: console.log(2 + 2 * 2)?',
-          options: ['6', '8', '4', 'Undefined']
-        },
-        // 15. Fill-in-the-Blank
-        {
-          question: 'JavaScript code is executed in a ________ environment.',
-           type:'fill'
-        },
-        // 16. MCQ
-        {
-          question: 'Which of these is used to select an element by ID in JavaScript?',
-          options: ['getElementById()', 'querySelector()', 'getElementByClassName()', 'getElementByTagName()']
-        },
-        // 17. MCQ
-        {
-          question: 'Which of the following is NOT a method to declare a variable in JavaScript?',
-          options: ['var', 'let', 'const', 'define']
-        },
-        // 18. Fill-in-the-Blank
-        {
-          question: 'The method ________ is used to add an item to the end of an array in JavaScript.',
-           type:'fill'
-        },
-        // 19. MCQ
-        {
-          question: 'Which HTML tag is used to display an image?',
-          options: ['<img>', '<image>', '<picture>', '<src>']
-        },
-        // 20. MCQ
-        {
-          question: 'What does the acronym "CSS" stand for?',
-          options: ['Cascading Style Sheets', 'Creative Style System', 'Computer Style Sheet', 'Colorful Style Sheets']
-        },
-        // 21. Fill-in-the-Blank
-        {
-          question: 'A function in JavaScript is invoked when it is called using ________.',
-           type:'fill'
-        },
-        // 22. MCQ
-        {
-          question: 'Write a JavaScript function to sort an array of numbers in ascending order.',
-          options: ['sort()', 'filter()', 'reduce()', 'map()']
-        },
-        // 23. MCQ
-        {
-          question: 'What does the "console.log()" method do in JavaScript?',
-          options: ['Logs a message to the console', 'Prints to the webpage', 'Throws an error', 'None of the above']
-        },
-        // 24. MCQ
-        {
-          question: 'Which of the following is used to add a comment in JavaScript?',
-          options: ['//', '#', '/* */', 'All of the above']
-        },// 25. MCQ
-        {
-          question: 'Which HTTP method is used to update existing data on a server?',
-          options: ['GET', 'POST', 'PUT', 'DELETE']
-        },
-        // 26. Fill-in-the-Blank
-        {
-          question: 'The ________ attribute in HTML specifies alternative text for an image.',
-          type: 'fill'
-        },
-        // 27. MCQ
-        {
-          question: 'Which keyword is used to declare a constant in JavaScript?',
-          options: ['const', 'constant', 'var', 'let']
-        },
-        // 28. Fill-in-the-Blank
-        {
-          question: 'In CSS, the ________ property is used to change the text color.',
-          type: 'fill'
-        },
-        // 29. MCQ
-        {
-          question: 'Which of the following is a JavaScript data type?',
-          options: ['Number', 'Class', 'Module', 'Package']
-        },
-        // 30. Fill-in-the-Blank
-        {
-          question: 'The ________ tag in HTML is used to define an unordered list.',
-          type: 'fill'
-        },
-        
-      ];
+  // 1. MCQ
+  {
+    question: 'What is the worst-case time complexity of Linear search?',
+    options: ['O(n log n)', 'O(n²)', 'O(log n)', 'O(n)']
+  },
+  // 2. MCQ
+  {
+    question: 'In a relational database, which operation is used to combine data from two tables based on a related column?',
+    options: ['UNION', 'JOIN', 'SELECT', 'INTERSECT']
+  },
+  // 3. MCQ
+  {
+    question: 'The sum of two numbers is 48, and their difference is 12. What are the numbers?',
+    options: ['30 and 18', '28 and 20', '32 and 16', '36 and 12']
+  },
+  // 4. Fill-in-the-Blank
+  {
+    question: 'The full form of SQL is __________.',
+    type: 'fill'
+  },
+  // 5. MCQ
+  {
+    question: 'A shopkeeper marks an item at ₹800 and gives a 10% discount. What is the selling price?',
+    options: ['₹700', '₹720', '₹750', '₹780']
+  },
+  // 6. MCQ
+  {
+    question: 'What will be the output of the following Python code? x = [1, 2, 3]; print(x * 2)',
+    options: ['[1, 2, 3, 1, 2, 3]', '[1, 3, 2, 1, 2, 3]', '[2, 1, 4, 5, 3, 2]', '[1, 2, 3, 4, 3, 2, 1]']
+  },
+  // 7. MCQ
+  {
+    question: 'A = 5 years older than B, B = 3 years older than C. If C is 10 years old, A is __________ years old.',
+    options: ['15', '18', '20', '25']
+  },
+  // 8. MCQ
+  {
+    question: 'Which data structure is used for implementing recursion?',
+    options: ['Queue', 'Stack', 'Linked List', 'Array']
+  },
+  // 9. MCQ
+  {
+    question: 'Which SQL command is used to remove a table and all its data?',
+    options: ['DROP', 'DELETE', 'TRUNCATE', 'REMOVE']
+  },
+  // 10. MCQ
+  {
+    question: 'If today is Monday, what will be the day after 45 days?',
+    options: ['Sunday', 'Monday', 'Tuesday', 'Wednesday']
+  },
+  // 11. MCQ
+  {
+    question: 'Python uses __________ indentation for defining blocks of code.',
+    options: ['Curly braces', 'Tabs or spaces', 'Parentheses', 'Semicolons']
+  },
+  // 12. MCQ
+  {
+    question: 'What is the result of System.out.println(10 + 20 + "30"); in Java?',
+    options: ['3030', '102030', '3020', '60']
+  },
+  // 13. MCQ
+  {
+    question: 'A person travels 60 km, 70 km, and 90 km in three hours. Average speed is __________ km/h.',
+    options: ['60', '70', '72', '73.3']
+  },
+  // 14. MCQ
+  {
+    question: 'What is the LCM of 12 and 15?',
+    options: ['30', '60', '45', '90']
+  },
+  // 15. MCQ
+  {
+    question: 'What keyword is used in Python to define a function?',
+    options: ['func', 'function', 'def', 'define']
+  },
+  // 16. MCQ
+  {
+    question: 'A number when divided by 7 gives remainder 3. Its square divided by 7 gives remainder __________.',
+    options: ['2', '1', '4', '3']
+  },
+  // 17. MCQ
+  {
+    question: 'Choose the correct synonym for "Ephemeral":',
+    options: ['Temporary', 'Permanent', 'Transparent', 'Unchangeable']
+  },
+  // 18. MCQ
+  {
+    question: 'Which of these is a primary key constraint in SQL used for?',
+    options: ['Preventing duplicate rows', 'Hiding data', 'Encrypting columns', 'None of these']
+  },
+  // 19. MCQ
+  {
+    question: 'HTML stands for __________.',
+    options: ['Hyperlinks and Text Markup Language', 'HyperText Markup Language', 'HighText Machine Language', 'Home Tool Markup Language']
+  },
+  // 20. MCQ
+  {
+    question: 'Which of these is a loop in C?',
+    options: ['if', 'switch', 'for', 'case']
+  },
+  // 21. MCQ
+  {
+    question: 'What will be the output of print(2 ** 3 + 5 % 3) in Python?',
+    options: ['9', '11', '7', '13']
+  },
+  // 22. MCQ
+  {
+    question: 'Which algorithm is used for finding the shortest path in a graph?',
+    options: ['Dijkstra’s Algorithm', 'DFS', 'BFS', 'Prim’s Algorithm']
+  },
+  // 23. MCQ
+  {
+    question: 'In a certain code, "MANGO" is written as "NBOHP". How is "APPLE" written?',
+    options: ['BQQMF', 'BRRMF', 'CQQMF', 'BPPLE']
+  },
+  // 24. MCQ
+  {
+    question: 'If x = "100", what will be the result of int(x) + 50 in Python?',
+    options: ['150', '10050', '50', 'Error']
+  },
+  // 25. MCQ
+  {
+    question: 'Which keyword is used in SQL to sort the result in descending order?',
+    options: ['SORT BY DESC', 'ORDER BY DESC', 'DESC ORDER', 'ARRANGE DESC']
+  },
+  // 26. MCQ
+  {
+    question: 'In recursion, the condition that ends the recursive calls is called the __________ condition.',
+    options: ['Limit', 'End', 'Base', 'Final']
+  },
+  // 27. MCQ
+  {
+    question: 'Identify the output: print(len("banana")) in Python.',
+    options: ['3', '4', '5', '6']
+  },
+  // 28. MCQ
+  {
+    question: 'If A is the brother of B, B is the sister of C, and C is the son of D, how is A related to D?',
+    options: ['Son', 'Daughter', 'Brother', 'Father']
+  },
+  // 29. MCQ
+  {
+    question: 'What is the postfix of the expression: A + B * C?',
+    options: ['A B C * +', 'A + B C *', 'A B + C *', 'A * B + C']
+  },
+  // 30. MCQ
+  {
+    question: 'The number of edges in a complete graph with n vertices is __________.',
+    options: ['n(n-1)/2', 'n²', 'n + 1', 'n(n+1)/2']
+  }
+];
 
   useEffect(() => {
     if (userInfo && submissionId) {
