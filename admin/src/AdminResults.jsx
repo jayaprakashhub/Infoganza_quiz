@@ -131,10 +131,10 @@ import axios from 'axios';
   'Structured Query Language',    // Question 4
   '₹720',                         // Question 5
   '[1, 2, 3, 1, 2, 3]',           // Question 6
-  '25',                           // Question 7
+  '18',                           // Question 7
   'Stack',                        // Question 8
   'DROP',                         // Question 9
-  'Wednesday',                    // Question 10
+  'Thursday',                    // Question 10
   'Tabs or spaces',               // Question 11
   '3030',                         // Question 12
   '73.3',                         // Question 13
@@ -145,7 +145,7 @@ import axios from 'axios';
   'Preventing duplicate rows',    // Question 18
   'HyperText Markup Language',    // Question 19
   'for',                          // Question 20
-  '9',                            // Question 21
+  '10',                            // Question 21
   'Dijkstra’s Algorithm',         // Question 22
   'BQQMF',                        // Question 23
   '150',                          // Question 24
