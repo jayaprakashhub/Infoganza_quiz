@@ -3,165 +3,116 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const QuizPage = ({ userInfo, submissionId }) => {
-  const [answers, setAnswers] = useState(Array(30).fill(''));
+  const [answers, setAnswers] = useState(Array(20).fill(''));
   const [startTime, setStartTime] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(25 * 60); // 30 minutes in seconds
   const navigate = useNavigate();
 
- const questions = [
-  // 1. MCQ
-  {
-    question: 'What is the worst-case time complexity of Linear search?',
-    options: ['O(n log n)', 'O(n²)', 'O(log n)', 'O(n)']
-  },
-  // 2. MCQ
-  {
-    question: 'In a relational database, which operation is used to combine data from two tables based on a related column?',
-    options: ['UNION', 'JOIN', 'SELECT', 'INTERSECT']
-  },
-  // 3. MCQ
-  {
-    question: 'The sum of two numbers is 48, and their difference is 12. What are the numbers?',
-    options: ['30 and 18', '28 and 20', '32 and 16', '36 and 12']
-  },
-  // 4. Fill-in-the-Blank
-  {
-    question: 'The full form of SQL is __________.',
-    type: 'fill'
-  },
-  // 5. MCQ
-  {
-    question: 'A shopkeeper marks an item at ₹800 and gives a 10% discount. What is the selling price?',
-    options: ['₹700', '₹720', '₹750', '₹780']
-  },
-  // 6. MCQ
-  {
-    question: 'What will be the output of the following Python code? x = [1, 2, 3]; print(x * 2)',
-    options: ['[1, 2, 3, 1, 2, 3]', '[1, 3, 2, 1, 2, 3]', '[2, 1, 4, 5, 3, 2]', '[1, 2, 3, 4, 3, 2, 1]']
-  },
-  // 7. MCQ
-  {
-    question: 'A = 5 years older than B, B = 3 years older than C. If C is 10 years old, A is __________ years old.',
-    options: ['15', '18', '20', '25']
-  },
-  // 8. MCQ
-  {
-    question: 'Which data structure is used for implementing recursion?',
-    options: ['Queue', 'Stack', 'Linked List', 'Array']
-  },
-  // 9. MCQ
-  {
-    question: 'Which SQL command is used to remove a table and all its data?',
-    options: ['DROP', 'DELETE', 'TRUNCATE', 'REMOVE']
-  },
-  // 10. MCQ
-  {
-    question: 'If today is Monday, what will be the day after 45 days?',
-    options: ['Sunday', 'Monday', 'Thursday', 'Wednesday']
-  },
-  // 11. MCQ
-  {
-    question: 'Python uses __________ indentation for defining blocks of code.',
-    options: ['Curly braces', 'Tabs or spaces', 'Parentheses', 'Semicolons']
-  },
-  // 12. MCQ
-  {
-    question: 'What is the result of System.out.println(10 + 20 + "30"); in Java?',
-    options: ['3030', '102030', '3020', '60']
-  },
-  // 13. MCQ
-  {
-    question: 'A person travels 60 km, 70 km, and 90 km in three hours. Average speed is __________ km/h.',
-    options: ['60', '70', '72', '73.3']
-  },
-  // 14. MCQ
-  {
-    question: 'What is the LCM of 12 and 15?',
-    options: ['30', '60', '45', '90']
-  },
-  // 15. MCQ
-  {
-    question: 'What keyword is used in Python to define a function?',
-    options: ['func', 'function', 'def', 'define']
-  },
-  // 16. MCQ
-  {
-    question: 'A number when divided by 7 gives remainder 3. Its square divided by 7 gives remainder __________.',
-    options: ['2', '1', '4', '3']
-  },
-  // 17. MCQ
-  {
-    question: 'Choose the correct synonym for "Ephemeral":',
-    options: ['Temporary', 'Permanent', 'Transparent', 'Unchangeable']
-  },
-  // 18. MCQ
-  {
-    question: 'Which of these is a primary key constraint in SQL used for?',
-    options: ['Preventing duplicate rows', 'Hiding data', 'Encrypting columns', 'None of these']
-  },
-  // 19. MCQ
-  {
-    question: 'HTML stands for __________.',
-    options: ['Hyperlinks and Text Markup Language', 'HyperText Markup Language', 'HighText Machine Language', 'Home Tool Markup Language']
-  },
-  // 20. MCQ
-  {
-    question: 'Which of these is a loop in C?',
-    options: ['if', 'switch', 'for', 'case']
-  },
-  // 21. MCQ
-  {
-    question: 'What will be the output of print(2 ** 3 + 5 % 3) in Python?',
-    options: ['10', '11', '7', '13']
-  },
-  // 22. MCQ
-  {
-    question: 'Which algorithm is used for finding the shortest path in a graph?',
-    options: ['Dijkstra’s Algorithm', 'DFS', 'BFS', 'Prim’s Algorithm']
-  },
-  // 23. MCQ
-  {
-    question: 'In a certain code, "MANGO" is written as "NBOHP". How is "APPLE" written?',
-    options: ['BQQMF', 'BRRMF', 'CQQMF', 'BPPLE']
-  },
-  // 24. MCQ
-  {
-    question: 'If x = "100", what will be the result of int(x) + 50 in Python?',
-    options: ['150', '10050', '50', 'Error']
-  },
-  // 25. MCQ
-  {
-    question: 'Which keyword is used in SQL to sort the result in descending order?',
-    options: ['SORT BY DESC', 'ORDER BY DESC', 'DESC ORDER', 'ARRANGE DESC']
-  },
-  // 26. MCQ
-  {
-    question: 'In recursion, the condition that ends the recursive calls is called the __________ condition.',
-    options: ['Limit', 'End', 'Base', 'Final']
-  },
-  // 27. MCQ
-  {
-    question: 'Identify the output: print(len("banana")) in Python.',
-    options: ['3', '4', '5', '6']
-  },
-  // 28. MCQ
-  {
-    question: 'If A is the brother of B, B is the sister of C, and C is the son of D, how is A related to D?',
-    options: ['Son', 'Daughter', 'Brother', 'Father']
-  },
-  // 29. MCQ
-  {
-    question: 'What is the postfix of the expression: A + B * C?',
-    options: ['A B C * +', 'A + B C *', 'A B + C *', 'A * B + C']
-  },
-  // 30. MCQ
-  {
-    question: 'The number of edges in a complete graph with n vertices is __________.',
-    options: ['n(n-1)/2', 'n²', 'n + 1', 'n(n+1)/2']
-  }
-];
+const questions = [
+    // 1. Fill-in-the-Blank
+    {
+      question: 'Find the second highest salary from the employee table.',
+      type: 'fill'
+    },
+    // 2. Fill-in-the-Blank
+    {
+      question: 'SQL statements are terminated using a __________.',
+      type: 'fill'
+    },
+    // 3. Fill-in-the-Blank
+    {
+      question: 'A __________ is used to enforce a link between two tables.',
+      type: 'fill'
+    },
+    // 4. Fill-in-the-Blank
+    {
+      question:'Select names of employees with salary greater than average salary from employees table.',
+      type: 'fill'
+    },
+    // 5. Fill-in-the-Blank
+    {
+      question: "Get all records from the orders table where the status is 'Delivered'.",
+      type: 'fill'
+    },
+    // 6. Fill-in-the-Blank
+    {
+      question: 'Find students who are older than 18 from students table.',
+      type: 'fill'
+    },
+    // 7. Fill-in-the-Blank
+    {
+      question: 'Display the names of customers in alphabetical order from customer table.',
+      type: 'fill'
+    },
+    // 8. Fill-in-the-Blank
+    {
+      question: "Find all employees who work in the 'HR' department from employees table.",
+      type: 'fill'
+    },
+    // 9. Fill-in-the-Blank
+    {
+      question: 'Get the highest salary from the employees table.',
+      type: 'fill'
+    },
+    // 10. Fill-in-the-Blank
+    {
+      question: 'The __________ command permanently saves changes made by a transaction.',
+      type: 'fill'
+    },
+    // 11. Fill-in-the-Blank
+    {
+      question: 'Count how many students are in the students table.',
+      type: 'fill'
+    },
+    // 12. Fill-in-the-Blank
+    {
+      question: 'The __________ function returns the number of non-null values in a column.',
+      type: 'fill'
+    },
+    // 13. Fill-in-the-Blank
+    {
+      question: 'Retrieve the names and marks of students who scored exactly 100 from students table.',
+      type: 'fill'
+    },
+    // 14. Fill-in-the-Blank
+    {
+      question: 'List all products that cost more than 500 from products table.',
+      type: 'fill'
+    },
+    // 15. Fill-in-the-Blank
+    {
+      question: 'A __________ join returns only the matching rows from both tables.',
+      type: 'fill'
+    },
+    // 16. MCQ
+    {
+      question: 'Which SQL clause is used to filter rows after aggregation?',
+      options: ['WHERE', 'HAVING', 'GROUP BY', 'ORDER BY']
+    },
+    // 17. MCQ
+    {
+      question: 'Which of the following does not return duplicate rows by default?',
+      options: ['JOIN', 'SELECT', 'UNION', 'UNION ALL']
+    },
+    // 18. MCQ
+    {
+      question: 'What type of JOIN includes all rows from the left table, even if there are no matches in the right table?',
+      options: ['LEFT JOIN', 'RIGHT JOIN', 'INNER JOIN', 'CROSS JOIN']
+    },
+    // 19. MCQ
+    {
+      question: 'Which SQL keyword allows you to check if a subquery returns any records?',
+      options: ['EXISTS', 'HAVING', 'CHECK', 'VALIDATE']
+    },
+    // 20. MCQ
+    {
+      question: 'Which of the following statements will remove a table structure permanently?',
+      options: ['DELETE', 'TRUNCATE', 'ERASE', 'DROP']
+    }
+  ];
+
 
   useEffect(() => {
     if (userInfo && submissionId) {
