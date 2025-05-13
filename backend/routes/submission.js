@@ -193,34 +193,42 @@ router.put('/submit/:id', async (req, res) => {
 
   // Define the correct answers for all questions
 const correctAnswers = [
-    // Fill-in-the-Blank Answers
-    'SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);', // Question 1
-    'Semicolon', // Question 2
-    'Foreign key', // Question 3
-    'SELECT name FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);', // Question 4
-    "SELECT * FROM orders WHERE status = 'Delivered';", // Question 5
-    'SELECT name FROM students WHERE age > 18;', // Question 6
-    'SELECT name FROM customers ORDER BY name ASC;', // Question 7
-    "SELECT name FROM employees WHERE department = 'HR';", // Question 8
-    'SELECT MAX(salary) FROM employees;', // Question 9
-    'COMMIT', // Question 10
-    'SELECT COUNT(*) FROM students;', // Question 11
-    'COUNT', // Question 12
-    'SELECT name, marks FROM students WHERE marks = 100;', // Question 13
-    'SELECT name FROM products WHERE price > 500;', // Question 14
-    'INNER', // Question 15
-  
-    // MCQ Answers
-    'HAVING', // Question 16
-    'UNION', // Question 17
-    'LEFT JOIN', // Question 18
-    'EXISTS', // Question 19
-    'DROP' // Question 20
-  ];
+  'LLaMA 3', // Q1
+  '360 m', // Q2
+  'Harvey', // Q3
+  '44.55', // Q4
+  'Facilitating communication between AI agents', // Q5
+  'Rs. 26,620', // Q6
+  'IBM', // Q7
+  '6', // Q8
+  'Helsing', // Q9
+  'Electricity consumption exceeding 8% of national usage', // Q10
+  '48,400', // Q11
+  'Federated Learning', // Q12
+  'Claude 3', // Q13
+  'Gemini 2.0 Flash', // Q14
+  'Generative AI', // Q15
+  'Bridgewater Associates', // Q16
+  'Amazon', // Q17
+  'Assuming breach and verifying all access', // Q18
+  'Quantum Error Correction', // Q19
+  'Creating biometric identification systems', // Q20
+  'AI Safety Summit Charter', // Q21
+  'LLaMA 3', // Q22
+  'TxGemma', // Q23
+  'Decoding dolphin communication using AI', // Q24
+  'Understanding and executing natural language instructions in 3D environments', // Q25
+  'Superscalar relies on compiler optimization, SMT provides thread-level parallelism', // Q26
+  'Determining if a Turing machine halts on a given input', // Q27
+  'O(n)', // Q28
+  'Resource preemption', // Q29
+  'Gradients become extremely small in early layers, slowing down learning' // Q30
+];
+
 
 
   // Validate submission data
-  if (!Array.isArray(answers) || answers.length !== 20 || typeof timeTaken !== 'number') {
+  if (!Array.isArray(answers) || answers.length !== 30 || typeof timeTaken !== 'number') {
     return res.status(400).json({ error: 'Invalid submission data' });
   }
 
