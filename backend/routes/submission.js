@@ -193,41 +193,34 @@ router.put('/submit/:id', async (req, res) => {
 
   // Define the correct answers for all questions
 const correctAnswers = [
-  'O(n)',                         // Question 1
-  'JOIN',                         // Question 2
-  '30 and 18',                    // Question 3
-  'Structured Query Language',    // Question 4
-  '₹720',                         // Question 5
-  '[1, 2, 3, 1, 2, 3]',           // Question 6
-  '18',                           // Question 7
-  'Stack',                        // Question 8
-  'DROP',                         // Question 9
-  'Thursday',                    // Question 10
-  'Tabs or spaces',               // Question 11
-  '3030',                         // Question 12
-  '73.3',                         // Question 13
-  '60',                           // Question 14
-  'def',                          // Question 15
-  '2',                            // Question 16
-  'Temporary',                    // Question 17
-  'Preventing duplicate rows',    // Question 18
-  'HyperText Markup Language',    // Question 19
-  'for',                          // Question 20
-  '10',                            // Question 21
-  'Dijkstra’s Algorithm',         // Question 22
-  'BQQMF',                        // Question 23
-  '150',                          // Question 24
-  'ORDER BY DESC',                // Question 25
-  'Base',                         // Question 26
-  '6',                            // Question 27
-  'Son',                          // Question 28
-  'A B C * +',                    // Question 29
-  'n(n-1)/2'                      // Question 30
-];
+    // Fill-in-the-Blank Answers
+    'SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);', // Question 1
+    'Semicolon', // Question 2
+    'Foreign key', // Question 3
+    'SELECT name FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);', // Question 4
+    "SELECT * FROM orders WHERE status = 'Delivered';", // Question 5
+    'SELECT name FROM students WHERE age > 18;', // Question 6
+    'SELECT name FROM customers ORDER BY name ASC;', // Question 7
+    "SELECT name FROM employees WHERE department = 'HR';", // Question 8
+    'SELECT MAX(salary) FROM employees;', // Question 9
+    'COMMIT', // Question 10
+    'SELECT COUNT(*) FROM students;', // Question 11
+    'COUNT', // Question 12
+    'SELECT name, marks FROM students WHERE marks = 100;', // Question 13
+    'SELECT name FROM products WHERE price > 500;', // Question 14
+    'INNER', // Question 15
+  
+    // MCQ Answers
+    'HAVING', // Question 16
+    'UNION', // Question 17
+    'LEFT JOIN', // Question 18
+    'EXISTS', // Question 19
+    'DROP' // Question 20
+  ];
 
 
   // Validate submission data
-  if (!Array.isArray(answers) || answers.length !== 30 || typeof timeTaken !== 'number') {
+  if (!Array.isArray(answers) || answers.length !== 20 || typeof timeTaken !== 'number') {
     return res.status(400).json({ error: 'Invalid submission data' });
   }
 
